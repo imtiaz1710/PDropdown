@@ -6,8 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./dropdown-panel.component.scss']
 })
 export class DropdownPanelComponent implements OnInit {
- @Input()  options: any[];
-
+  @Input() options: any[];
   selectedList: any[] = [];
 
   constructor() { }
@@ -15,35 +14,24 @@ export class DropdownPanelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelect(event){
+  onSelect(event) {
     this.selectedList.push(event);
     const index = this.options.findIndex(o => o == event);
 
-    if(index != -1) {
+    if (index != -1) {
       this.options.splice(index, 1);
       this.options = [...this.options];
-    } 
+    }
   }
 
-  removeFromSelection(option){
+  removeFromSelection(option) {
     this.options.push(option);
     this.options = [...this.options];
-    
+
     const index = this.selectedList.findIndex(o => o == option);
 
-    if(index != -1) {
+    if (index != -1) {
       this.selectedList.splice(index, 1);
-      //this.options = [...this.options];
-    } 
+    }
   }
-
-  // removeElementFromArray(array: any[], elementToRemove: any){
-  //   const index = array.findIndex(o => o == elementToRemove);
-
-  //   if(index != -1) {
-  //     array.splice(index, 1);
-  //     array = [...array];
-  //   } 
-  // }
-  
 }

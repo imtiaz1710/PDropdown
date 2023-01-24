@@ -9,16 +9,11 @@ import { Dropdown } from 'primeng/dropdown';
 export class SingleSelectDropdownComponent implements OnInit {
   @Input() options: any[];
   @Output() select: EventEmitter<any> = new EventEmitter();
-
   option: any;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  ngOnChages(){
-
   }
 
   submit(){
