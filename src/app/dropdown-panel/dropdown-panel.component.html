@@ -1,0 +1,7 @@
+<app-single-select-dropdown [options]="options" (select)="onSelect($event)">
+
+</app-single-select-dropdown>
+<hr>
+<div style="margin: 10px;" *ngFor="let selected of selectedList">
+    <span style="margin-right: 15px;">{{selected?.name}}</span> <i (click)="removeFromSelection(selected)" style="cursor: pointer;" class="pi pi-times"></i>
+</div>
